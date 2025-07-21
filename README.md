@@ -6,7 +6,23 @@ If you don't want to read the articles, here's a tl;dr for easy installation and
 **Step 0: Install Unreal Engine 4.26**  
 You MUST install [Unreal Engine 4.26 (CARLA fork)](https://github.com/CarlaUnreal/UnrealEngine) before installing and compiling Carla  
 Installation guide: You can read my [article](https://medium.com/@ailene.chan/the-struggle-is-real-installing-dreyevr-carla-0-9-13-d68d0d1cd625), or refer to official documentation.  
+```
+# Steps here
+git clone https://github.com/CarlaUnreal/UnrealEngine 
+# set this location to your $UE4_ROOT environment variable
 
+# in $UE4_ROOT
+git checkout d40ec35474e8793b4eea60dba6c4f051186e458e
+# or git reset --hard d40ec35474e8793b4eea60dba6c4f051186e458e
+
+```
+Note: In order to successfully run `Setup.bat`, you will need to download and replace the `Commit.gitdeps.xml` file within `<path-to-UnrealEngin>\Engine\Build`. [Download here](https://github.com/EpicGames/UnrealEngine/blob/4.26/Engine/Build/Commit.gitdeps.xml)
+```
+# In x64 Native Tools Command Prompt for VS 2019
+Setup.bat
+GenerateProjectFiles.bat
+```
+---
 **Install Carla**
 1. After cloning Carla 0.9.13, download files from this repo and replace accordingly.
 2. Download content file using this [link](http://carla-assets.s3.us-east-005.backblazeb2.com/20211112_d5cfa12.tar.gz)
@@ -31,26 +47,6 @@ Installation guide: You can read my [article](https://medium.com/@ailene.chan/th
    ```
 8. You should be able to see `carla-0.9.13-cp37-cp37m-win_amd64.whl` and `carla-0.9.13-py3.7-win-amd64.egg` in `<path-to-carla>\PythonAPI\carla\dist`
 
-
-
-
-
-```
-# Steps here
-git clone https://github.com/CarlaUnreal/UnrealEngine 
-# set this location to your $UE4_ROOT environment variable
-
-# in $UE4_ROOT
-git checkout d40ec35474e8793b4eea60dba6c4f051186e458e
-# or git reset --hard d40ec35474e8793b4eea60dba6c4f051186e458e
-
-```
-Note: In order to successfully run `Setup.bat`, you will need to download and replace the `Commit.gitdeps.xml` file within `<path-to-UnrealEngin>\Engine\Build`. [Download here](https://github.com/EpicGames/UnrealEngine/blob/4.26/Engine/Build/Commit.gitdeps.xml)
-```
-# In x64 Native Tools Command Prompt for VS 2019
-Setup.bat
-GenerateProjectFiles.bat
-```
 
 
 ---
